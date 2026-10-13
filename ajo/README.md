@@ -58,7 +58,7 @@ Run the keeper against it: `KEEPER_PRIVATE_KEY=<anvil key> npm run keeper` (add 
    ```
    Leave `TOKEN` unset to deploy `MockUSD` (testnet only). To use a real stablecoin, set `TOKEN=0x...`; the credit pool assumes 6 decimals.
 3. Check `evm_version` in `contracts/foundry.toml` (set to `cancun`) is supported by Monad.
-4. Web: deploy `apps/web` (Vercel: root directory `apps/web`, install command `cd ../.. && npm install`). Set the `NEXT_PUBLIC_*` variables.
+4. Web: deploy `apps/web` (Vercel: root directory `apps/web`, install command `cd ../.. && npm install`). Set the `NEXT_PUBLIC_*` variables in the hosting provider's production environment and redeploy; a repository-root `.env` is not loaded by an `apps/web` build. For Monad Testnet, set at least `NEXT_PUBLIC_CHAIN_ID=10143`, `NEXT_PUBLIC_RPC_URL=https://testnet-rpc.monad.xyz`, and the deployed contract addresses (or include the generated deployment in `packages/abi`).
 5. Keeper: run `apps/keeper` anywhere that can stay up (Render, Railway, a VPS) with `KEEPER_PRIVATE_KEY` for a dedicated low-balance wallet.
 6. Add `NEXT_PUBLIC_REPO_URL` and `NEXT_PUBLIC_DEMO_VIDEO_URL` so the landing footer links them.
 

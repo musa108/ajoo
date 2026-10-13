@@ -5,12 +5,14 @@ const num = (v: string | undefined, d: number) => (v ? Number(v) : d);
 
 export const chainId = num(process.env.NEXT_PUBLIC_CHAIN_ID, 31337);
 const symbol = process.env.NEXT_PUBLIC_NATIVE_SYMBOL ?? "ETH";
+const defaultRpcUrl = chainId === 10143 ? "https://testnet-rpc.monad.xyz" : "http://127.0.0.1:8545";
+export const rpcUrl = process.env.NEXT_PUBLIC_RPC_URL ?? defaultRpcUrl;
 
 export const chain = defineChain({
   id: chainId,
   name: process.env.NEXT_PUBLIC_CHAIN_NAME ?? (chainId === 31337 ? "Local anvil" : `Chain ${chainId}`),
   nativeCurrency: { name: symbol, symbol, decimals: 18 },
-  rpcUrls: { default: { http: [process.env.NEXT_PUBLIC_RPC_URL ?? "http://127.0.0.1:8545"] } },
+  rpcUrls: { default: { http: [rpcUrl] } },
   blockExplorers: process.env.NEXT_PUBLIC_EXPLORER_URL
     ? { default: { name: "Explorer", url: process.env.NEXT_PUBLIC_EXPLORER_URL } }
     : undefined,
