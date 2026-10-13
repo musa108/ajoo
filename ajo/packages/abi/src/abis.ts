@@ -2950,14 +2950,14 @@ export const deployments: Record<number, {
   chainId: number; token: `0x${string}`; tokenIsMock: boolean; registry: `0x${string}`;
   factory: `0x${string}`; implementation: `0x${string}`; creditPool: `0x${string}`; deployer: `0x${string}`;
 }> = {
-  "31337": {
-    "chainId": 31337,
-    "creditPool": "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
-    "deployer": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
-    "factory": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
-    "implementation": "0x75537828f2ce51be7289709686A69CbFDbB714F1",
-    "registry": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
-    "token": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  "10143": {
+    "chainId": 10143,
+    "creditPool": "0xe3b612E27dF58Cb9C2045f6203845B7dD5e16E0E",
+    "deployer": "0x352Cce454e398b48dDE69a19F892B2F2933813Fc",
+    "factory": "0xcE5C0ef65EAB66265D16C81996A6A0794433A7fc",
+    "implementation": "0x26Bb1Ec21ce9E54a881B9A28DA73CC4c34fd77F1",
+    "registry": "0xe63bbbAe443eFf1E3F7CeF272894037A8e21dc35",
+    "token": "0x4e72B76B8f082104b7598C0D3efdc8355FaD87B0",
     "tokenIsMock": true
   }
 } as never;

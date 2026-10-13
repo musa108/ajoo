@@ -1,0 +1,10 @@
+{
+  "chainId": 10143,
+  "creditPool": "0xe3b612E27dF58Cb9C2045f6203845B7dD5e16E0E",
+  "deployer": "0x352Cce454e398b48dDE69a19F892B2F2933813Fc",
+  "factory": "0xcE5C0ef65EAB66265D16C81996A6A0794433A7fc",
+  "implementation": "0x26Bb1Ec21ce9E54a881B9A28DA73CC4c34fd77F1",
+  "registry": "0xe63bbbAe443eFf1E3F7CeF272894037A8e21dc35",
+  "token": "0x4e72B76B8f082104b7598C0D3efdc8355FaD87B0",
+  "tokenIsMock": true
+}
