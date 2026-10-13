@@ -1,0 +1,24 @@
+{
+  "name": "ajo",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "abi": "node scripts/export-abi.mjs",
+    "contracts:build": "cd contracts && forge build",
+    "contracts:test": "cd contracts && forge test",
+    "dev:web": "npm run dev -w apps/web",
+    "build:web": "npm run build -w apps/web",
+    "keeper": "npm run start -w apps/keeper",
+    "seed:local": "tsx scripts/seed-local.ts"
+  },
+  "devDependencies": {
+    "axe-core": "^4.14.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "viem": "^2.21.0"
+  }
+}

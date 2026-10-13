@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: 242 244 255;
+  --surface: 255 255 255;
+  --ink: 16 20 55;
+  --ink-soft: 74 79 122;
+  --line: 213 218 255;
+  --cobalt: 37 64 232;
+  --cobalt-press: 26 47 194;
+  --cobalt-tint: 223 228 255;
+  --marigold: 255 201 51;
+  --marigold-tint: 255 241 194;
+  --marigold-deep: 122 78 0;
+  --leaf: 11 122 77;
+  --leaf-tint: 221 245 233;
+  --coral: 199 48 31;
+  --coral-tint: 255 227 223;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --font-display: "Bricolage Grotesque Variable";
+  --font-body: "Instrument Sans Variable";
+}
+
+@layer base {
+  html {
+    background: rgb(var(--paper));
+    color: rgb(var(--ink));
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply font-sans text-[1.0625rem] leading-[1.6] antialiased;
+    min-height: 100dvh;
+    background: rgb(var(--paper));
+    touch-action: manipulation;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  h1, h2 {
+    font-stretch: 88%;
+  }
+  h3 {
+    @apply text-xl font-bold tracking-tight;
+  }
+  a {
+    @apply cursor-pointer;
+  }
+  :focus-visible {
+    outline: 3px solid rgb(var(--cobalt));
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  ::selection {
+    background: rgb(var(--marigold));
+    color: rgb(var(--ink));
+  }
+  button, [role="button"], select, summary {
+    @apply cursor-pointer;
+  }
+  button:disabled {
+    @apply cursor-not-allowed;
+  }
+}
+
+@layer utilities {
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+/* The one non-user motion on the product: the pot passing round the ring. */
+@keyframes pot-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
