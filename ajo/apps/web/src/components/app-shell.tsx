@@ -44,10 +44,8 @@ export function AppShell({ children }: { children: ReactNode }) {
               );
             })}
           </nav>
-          <div className="order-2 flex items-center gap-3 md:order-3">
-            <div className="hidden lg:block">
-              <BalanceChip />
-            </div>
+          <div className="order-2 flex w-full items-center justify-between gap-2 md:order-3 md:w-auto md:justify-start md:gap-3">
+            <BalanceChip />
             <WalletButton />
           </div>
         </div>

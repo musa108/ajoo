@@ -89,7 +89,8 @@ export function BalanceChip() {
           loading={busy}
           onClick={() => run("Get test dollars", "1,000 test dollars added", { address: addresses.token!, abi: mockUSDAbi, functionName: "faucet", args: [1_000_000_000n] })}
         >
-          Get 1,000 test dollars
+          <span className="sm:hidden">Get test $</span>
+          <span className="hidden sm:inline">Get 1,000 test dollars</span>
         </Button>
       )}
     </div>
